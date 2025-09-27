@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepairGo - About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background: linear-gradient(135deg, #4facfe, #6a11cb, #ff6ec4); background-size: 300% 300%; animation: bgMove 15s infinite alternate ease-in-out; color:#fff; min-height:100vh; }
+    @keyframes bgMove { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
+    
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(255,255,255,0.1); backdrop-filter:blur(15px); border-bottom:1px solid rgba(255,255,255,0.3); position:sticky; top:0; z-index:1000; }
+    .logo { display:flex; align-items:center; gap:10px; font-size:1.7rem; font-weight:700; color:#fff; }
+    .logo img { width:35px; height:35px; border-radius:50%; }
+    .nav-links { list-style:none; display:flex; gap:2rem; }
+    .nav-links li a { text-decoration:none; color:#fff; font-weight:600; }
+    .nav-links li a[href="#"] { pointer-events:none; } /* non-workable for About and Contact */
+
+    .hero { text-align:center; padding:3rem 5%; }
+    .hero h1 { font-size:2rem; margin-bottom:1rem; color:#ffd700; }
+    .hero p { font-size:1.1rem; max-width:700px; margin:0 auto; }
+
+    .section { padding:3rem 5%; text-align:center; }
+    .team, .work { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem; }
+    .card { background: rgba(255,255,255,0.1); padding:1rem; border-radius:15px; width:200px; transition: transform 0.3s ease; }
+    .card img { width:100%; border-radius:10px; margin-bottom:0.5rem; }
+    .card:hover { transform:translateY(-10px); }
+
+    /* Ratings */
+    .rating-container { text-align:center; margin-top:2rem; min-height:70px; }
+    .stars { font-size:2rem; color:#ffd700; margin-bottom:0.5rem; }
+    #reviewText { font-size:1rem; color:#fff; max-width:400px; margin:0 auto; transition:opacity 0.5s ease-in-out; }
+
+    footer { background: rgba(255,255,255,0.1); backdrop-filter:blur(10px); text-align:center; padding:1.5rem; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.3); }
+    footer p { color:#eee; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png" alt="RepairGo Logo">
+      RepairGo
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+     <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Hero -->
+  <section class="hero">
+    <h1>About RepairGo</h1>
+    <p>We are a dedicated team of skilled technicians in <strong>Agra</strong>, providing fast, reliable, and professional home appliance repair services. From ACs and washing machines to refrigerators, geysers, and microwaves, we ensure all your essential appliances work efficiently. Our mission is to deliver high-quality repairs with expertise, transparency, and excellent customer service.</p>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <h2>Our Team</h2>
+    <div class="team">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603415526960-f71c218c5ff4?auto=format&fit=crop&w=400&q=80" alt="Owner">
+        <h3>Harish Kumar</h3>
+        <p>Owner</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091215364-5f0ebf39d82b?auto=format&fit=crop&w=400&q=80" alt="Technician">
+        <h3>Vishal Kumar</h3>
+        <p>Technician</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Samples -->
+  <section class="section">
+    <h2>Our Work</h2>
+    <div class="work">
+      <div class="card">
+        <img src="ac.jpg" alt="Work Sample 1">
+        <p>AC Installation</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443e84?auto=format&fit=crop&w=400&q=80" alt="Work Sample 2">
+        <p>Washing Machine Repair</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1590487987014-3e48d2d36e92?auto=format&fit=crop&w=400&q=80" alt="Work Sample 3">
+        <p>Fridge Repair</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ratings -->
+  <section class="section">
+    <h2>Customer Ratings</h2>
+    <div class="rating-container">
+      <p class="stars" id="stars">★★★★★</p>
+      <p id="reviewText">"Excellent service! My AC was repaired in no time." - Rahul S.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div style="max-width:1200px; margin:0 auto; padding:1rem; display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
+      <p>&copy; 2025 RepairGo. All Rights Reserved.</p>
+      <p>Designed with ❤️ for Appliance Repair in Agra</p>
+    </div>
+  </footer>
+
+  <script>
+    const reviews = [
+      { text: '"Excellent service! My AC was repaired in no time."', name: "Rahul S.", stars: "★★★★★" },
+      { text: '"Professional and quick! Highly recommend."', name: "Anjali K.", stars: "★★★★★" },
+      { text: '"Very satisfied with the repair work."', name: "Vikram P.", stars: "★★★★☆" },
+      { text: '"Friendly technicians and reliable service."', name: "Neha T.", stars: "★★★★★" },
+    ];
+
+    let current = 0;
+    const starsEl = document.getElementById('stars');
+    const reviewTextEl = document.getElementById('reviewText');
+
+    function showReview() {
+      const review = reviews[current];
+      starsEl.textContent = review.stars;
+      reviewTextEl.style.opacity = 0;
+      setTimeout(() => {
+        reviewTextEl.textContent = `${review.text} - ${review.name}`;
+        reviewTextEl.style.opacity = 1;
+      }, 500);
+      current = (current + 1) % reviews.length;
+    }
+
+    setInterval(showReview, 4000);
+    window.onload = showReview;
+  </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepairGo - Appliance Repair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4facfe, #6a11cb, #ff6ec4);
+      background-size: 300% 300%;
+      animation: bgMove 15s infinite alternate ease-in-out;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-links li a:hover {
+      color: #ffd700;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 90vh;
+      padding: 0 10px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      max-width: 700px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: #f0f0f0;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ffd700, #ff7eb3);
+      color: #000;
+      padding: 0.9rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2.5s infinite;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.7);
+    }
+
+    /* Services */
+    .services {
+      padding: 3rem 5%;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #ffd700;
+    }
+
+    .service-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .service-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(45deg, #ffd700, #ff6ec4, #4facfe);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+    }
+
+    .service-box:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    .service-box img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+
+    footer p {
+      color: #eee;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png" alt="RepairGo Logo">
+      RepairGo
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Reliable Home Appliance Repair for AC, Washing Machines, Refrigerators, Geysers & More</h1>
+    <p>Expert repair services for all your essential home appliances. Fast, reliable, and trusted by thousands of Agra families.</p>
+    <a href="tel:+919997923986" class="btn">📞 Call Now</a>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <a href="ac-repair.html" class="service-box">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/air-conditioner.png" alt="AC Repair">
+        <h3>AC Repair</h3>
+        <p>Quick and professional AC repair services to keep you cool during summers.</p>
+      </a>
+      <a href="washing-repair.html" class="service-box">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/washing-machine.png" alt="Washing Machine Repair">
+        <h3>Washing Machine Repair</h3>
+        <p>Expert repair for all washing machine issues – top load & front load.</p>
+      </a>
+      <a href="fridge-repair.html" class="service-box">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/fridge.png" alt="Fridge Repair">
+        <h3>Fridge Repair</h3>
+        <p>Reliable refrigerator repair to keep your food fresh and safe.</p>
+      </a>
+      <a href="microwave-repair.html" class="service-box">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/microwave.png" alt="Microwave Repair">
+        <h3>Microwave Repair</h3>
+        <p>Efficient microwave repair services for hassle-free cooking.</p>
+      </a>
+      <a href="other-repairs.html" class="service-box">
+        <img src="https://img.icons8.com/ios-filled/100/000000/tools.png" alt="Other Repairs">
+        <h3>Other Appliance Repairs</h3>
+        <p>We also handle geysers, coolers, and all other household appliances.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width:1200px; margin:0 auto; padding:1rem; display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
+      <p>&copy; 2025 RepairGo. All Rights Reserved.</p>
+      <p>Designed with ❤️ for Appliance Repair in Agra</p>
+    </div>
+  </footer>
+
+</body>
+</html>
